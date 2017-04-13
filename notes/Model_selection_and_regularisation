@@ -1,0 +1,100 @@
+Why consider alternatives to least squares? especially when p>n
+Prediction accuracy
+Model Interpretability-feature selection
+
+3 Methods-
+Subset Selection
+Shrinkage(regularisation)--reducing variance
+Dimension Reduction(PCA)
+
+subset selection not suitable for large p---computational and statistical problem(overfitting)
+
+Deviance-negative 2 times the maximum log-likelihood--plays the role of RSS for a broader lass of models
+
+Forward stepwise selection-start with empty, add features for additional improvement
+Not guaranteed to find the best possible model out of all subset models---eg. for same number of predictors,these 2 may choose different predictors, forward is greedy technique,other is not.Because of correlation between variables, there is discrepation between the 2 predictors.
+Number of models to fit=p(p+1)/2+1
+Backward Stepwise selection:-
+---considers approx p^2 models
+Start with all, remove one by one,choose between the k models
+Not guaranteed to give best model
+Can be used only when n>p
+
+Choosing optimal Model-
+Model containing all predictors willl have smallest RSS and largest R^2---these are related to training error---therefore not suitable for choosing model
+Estimating Test error:-
+Indirect test error estimation my making adjustment to the training error to account for the bias due to overfitting
+Direct estimate test error using validation set approach or cross validation approach
+
+Cp,AIC,BIC and adjusted R^2-
+adjust training error for model size and is used to select among a set of models with different number of variables
+We want Cp,AIC,BIC to be minimised
+R^2 to be maximised
+
+Mallow's Cp ---Lecture 33, slide 20
+AIC formula ---slide 20
+
+For linear model Cp and AIC are propotional
+
+BIC---Slide 21
+for n>7,BIC has higher penalty, therefore BIC tends to choose smaller models.
+
+Adjusted R^2---Slide 22
+Unlike R^2, adjusted R^2 pays a price for inclusion of unnecessary variables in the model
+Cannot to generalised to other models
+
+Validation and cross validation is especially useful when p>n, it does not require sigma^2 ,also number of parameters i.e. d, also need not be known.
+
+One-standard-error rule:-
+Calculate standard error of estimated test MSE for each model size, then select smallest model for which estimated error is within one standard error of the lowest point on the curve.
+
+Shrinkage Methods:-
+Ridge regression and Lasso
+
+Ridge Regression-
+scaling of predictors
+Reduces variance
+Minimise RSS+lambda*sigma(betai^2)
+where lambda>=0 is a tuning parameter to be determined---cross validation used for this---lambda is tradeoff between fit and the size of coefficients
+L2 Norm
+The units of the predictors affects the L2 penalty in ridge regression, and hence β and y^ will both change
+It is best to apply ridge regression after standardising the predictors using xij=xij/sqrt(sigma(xij-mean(xj))/n)---now std=1
+Disadvantage-does not select variables as terms are not exactly reduced to zero
+
+Increasing λ will force us to fit simpler models. This means that training RSS will steadily increase because we are less able to fit the training data exactly.
+On increasing λ, At first, we expect test RSS to improve because we are not overfitting our training data anymore. Eventually, we will start fitting models that are too simple to capture the true effects and test RSS will go up.
+
+Lasso:-
+minimise RSS+lambda*sigma(|betaj|)
+Uses l1 penalty
+Does variable selection---some of coefficients are reduced to exactly zero
+Yields sparse models
+Restricting ourselves to simpler models by including a Lasso penalty will generally decrease the variance of the fits at the cost of higher bias.
+Geometric interpretation -slide 37
+
+Neither ridge nor lasso universally dominate the other
+Lasso performs better when the response is a function of only a relatively small number of predictors
+
+Cross validation for finding lambda-
+choose grid of lambda values and then compute the lowest cross validation error rate for each lambda...then model is refit
+
+Dimension Reduction-
+Z1,Z2...Zn ---linear combination of original predictors
+Principal Components Regression:-
+Step1:Finding principal component of data matrix
+Step2:perform least square regression
+First principal component is that (normalised) linear combination of variables with largest variance
+Second principal component has largest variance, subject to being uncorrelated with the first
+i.e. many correlated original variables are replaced with a small set of principal components that capture their joint variation
+For M=p, it is regular least square regression
+Principal components are found in unsupervised method
+It has a drawback as well-no guarantee that directions that best explain the predictors will also be the best directions to use for predicting the response
+When using dimensional reduction we restrict ourselves to simpler models. Thus, we expect bias to increase and variance to decrease.
+
+ALternative-
+Partial Least Squares-supervised
+Z1,Z2...Zn are chosen in supervised manner,direction chosen so that we also go in direection in which Y also changes
+Details of PLS-slide 56
+PLS places weight on variables that are most strongly related to the response.
+
+In practice, PLS does not give very high advantage over PCA.

@@ -1,0 +1,31 @@
+Cross Validation and Bootstrap
+provide estimates of test set error and standard deviation and bias of our parameter estimates
+
+Prediction error estimate-
+Large designated test set
+Mathematical adjustment-Cp statistic,AIC,BIC
+Holding out subset
+
+K-fold Cross validation:-
+K=5 or 10 is a good choice-bias variance tradeoff
+Right and wrong way of applying cross validation---
+Find folds before filtering the predictors---very important
+
+Bootstrap:-
+Used to quantify the uncertainty associated with given estimator or statistical learning method
+Used to find confidence intervals for alpha---bootstrap percentile
+Find value of alpha
+Allows to use a computer to mimic the process of obtaining data sets by repeated sampling observations from original data with replacement and of same size as original dataset.
+Cannot be directly be used for time series data---data not independent
+Block Bootstrap used for this
+i.e. sample uncorrelated variables
+There is a lot of overlap with original data, approx 2/3---bootstrap underestimates true prediction error
+Can be solved by only using those observations that , by chance did not occur in the current bootstrap sample---very complicated
+
+Conclusion--use k-fold cross validation---easier and better approach
+
+
+????????????????????
+Completely removing the bootstrap resampling noise is usually not worth incurring the extreme computational cost. If B is large, but still less than n^n, random resampling gives a good Monte Carlo estimate of the idealized bootstrap estimate for all n^n data sets.
+????????????????????
+

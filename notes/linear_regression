@@ -1,0 +1,37 @@
+residual- ei=yi-yi^
+residual sum of squares(RSS):-
+RSS=e1^2+e2^2...en^2
+mininise RSS
+----picture----
+measure of precision
+more the noise , less is precision...more the spread axis,more is precision
+These standard errors can be used to compute confidence
+intervals. A 95% confidence interval is defined as a range of
+values such that with 95% probability, the range will
+contain the true unknown value of the parameter.
+Residual Standard error:
+RSE=sqrt(RSS/(n-2))
+Total sum of squares:-
+TSS=sigma(sq(yi-mean(y)))
+R-squared (fraction of variance):-
+R2=(TSS-RSS)/TSS
+
+F-statistic:used to find whether any of the predictors are useful in predicting the response.More the better
+
+fit plane
+
+p-value greater than approx 0.1 is not significant
+greater the t-statistic , more the important/significant the parameter is
+
+choosing correct parameters:-
+1.all subset eval
+2.Forward selection
+3.Backward selection
+
+Qualitative Predictors:-dummy variables introduced.
+level with no dummy variable is called baseline
+baseline does not effect model
+
+interactions and non linearity
+synergy,interaction
+Hierarchy

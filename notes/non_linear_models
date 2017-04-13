@@ -1,0 +1,25 @@
+leverage-information at the end of curve is less , standard error is more.
+Select dimension d either ranfdom small value or do cross validation.
+To get confidence intervals, compute upper and lower bounds nd then invert to get on probability scale.
+Caveat-polynomials have a tail behaviour- very bad for extrapolation.
+
+Step Functions-Piece wise constant functions--No dirrect non linearities-Smooth alternatives aree available--eg splines
+Piecewise polynomials-smooth and local
+Natural cubic splines-extra functions at boundary-linearities at boundary- helps in extrapolation.
+Cubic spline with k knots-k+4 deg of freedom
+Natural spline with k knots-k deg of freedom
+Knot placement
+Smoothing Splines:
+Roughness penalty-lambda=0 => extrapolating function , lambda=infinity => linear function
+
+Local Regression-fit locally while moving region of interest.
+
+Generalized Additive models:-
+allows for flexible non linearities in several varibles ,  but retains additive structure of linear models.---coefficient not interesting, fitted functions are useful.
+
+Summary-
+Ways to add non linearities:Spline terms,polynomial terms,interactions,step functions
+
+Every function in the basis must be continuous at t, and we must be able to represent any piecewise linear function with a single knot at t as a linear combination of the functions in the basis.
+
+If there is an interaction between X1 and X2, a purely additive model can never capture it.

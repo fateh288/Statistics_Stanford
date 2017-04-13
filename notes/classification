@@ -1,0 +1,34 @@
+Linear regression not suitable for classifcation, might give probabilities less than zero or greater than one.
+Logistic regression used
+In multi class classification, arbitrarily assigning numbers to classes might be dangerous if linear regression is used,these numbers might assign numbering to parameters which might not be true.
+Discriminant analysis or multivariate logistic regression used.
+glm function in R
+Multivariate Logistic regression:-
+A variable which alone might not be significant,may become significant when combined with other variable.
+A variable not seeming signifiacnt may be due to fact that it might be correlated with other variable and is being taken care of and might be skipped.
+
+glmnet package
+
+Case control sampling:-sample people who already have heart disease and group not having heart disease and evaluate their parameters instead of waiting for large number of people having features maybe for about 20 years to see whether they will have heart disease or not.
+
+Discriminant Analysis:-
+Approach is to model distribution of X in each of the classes separately and then use bayes theorem to obtain Pr(Y|X)
+-->classify to the highest density
+log reg is unstable if classes are well separated
+if n small and distri of X is approx normal,linear discri analysis is more stable
+linear discri provides low dimensional views of data and popular when more than 2 response classes.
+Discriminant functions:-
+To classify X=x,it is equivalent to assigning x to the class with highest discriminant score.
+False Positives,True Negatices
+ROC plot displays both together
+AUC summarizes overall performance-higher AUC is good.
+
+Quadratic discriminant analysis:-
+When variances of each term is different
+i.e. different covariance matrix for each class.
+Naive bayes becomes useful when p is very large
+LDA has same as logistic , but diff is how parameters are estimated regress..
+Logistic Regression uses Pr(Y|X) , known as discriminative learning
+LDA uses Pr(X,Y) ,known as generative learning.
+
+With Gaussian distributions, naive Bayes is equivalent to Quadratic Discriminant Analysis with the additional requirement that each class covariance matrix Σk be diagonal. Thus, Quadratic Discriminant Analysis is more flexible.

@@ -1,0 +1,36 @@
+Try to fit a plane that separates the classes in the feature space.
+This plane in 2d space is a line.
+Hyperplane is selected which makes the gap largest.Max margin classifier.
+Optimisation problem---subject to some constraints.
+Non separable data,noisy data
+
+C is a tuning parameter.
+
+Linear boundary will always fail in some cases.
+Solution-Feature Expansion.i.e. go to a higher dimensional space. It come be done by introducing terms like X1^2 , X1X2,X1^2 X2^3,X1^3
+Polynomials get wild very fast--more elegant solution is use of kernels.
+Inner product and support vectors.
+<xi,xi'>=sigma[1->p](xij xi'j)
+f(x)=b0+sigma[i=1->n](ai<x,xi>)
+Support points-points having non zero alpha i.e. points on wrong side or on the boundary.
+Kernel function helps us find the inner products for d dimensional polynomials.
+K(xi, xi')=(1+sigma[j=i->p](xij xi'j))^d
+Radial kernel-implicit feature space-very high dimentional...controls variance by squashing down most dimentions severely.--most widely used kernel.Gamma-tuning parameter.
+
+SVM's for multiple classes:
+OVA-one versus all.Fit K different 2 class SVM.
+OVO-one versus one.Fit kC2 pairwise classifiers.
+If K is very large then OVA.
+
+SVM v/s logistic regression-
+We can rephrase logistic regression as SVM.
+
+SVM-loss is called hinge loss--loss+penalty.
+
+When classes are nearly separable, SVM is better then log regression.When not, LR with ridge penaly almost similar to SVM.
+If we want probabilities, LR is the choice.
+For non linear boundaries, kernel SVM's are popular.
+
+We can use kernels with LR and LDA as well, but computations are more expensive.
+SVM-less interpretation, cannot select the features for classification.
+SVM does not give probablilties directly, other ways can be fitting LR on top of SVM, other methods, but not that helpful.

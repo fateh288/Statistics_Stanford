@@ -1,0 +1,38 @@
+No Labels.
+PCA and clustering.
+PCA-preprocessing before supervised learning.
+
+Prinicipal component analysis- low dimensional representation.Find sequence of linear combinations that have maximum variance and mutually uncorrelated.
+PCA--good tool for visualization for supervised learning.
+Features should be normalized -mean 0,standard deviation 1.
+There are at most min(n-1,p) principal components.Each of principal components are perpendicular to the rest,(because uncorrelated)
+Another interpretation-Approximation by low dimensional plane that minimizes the PERPENDICULAR distance.
+
+In case of linear regression, we also try to minimise the distance, but not the perpendicular distance, also it is supervised.
+
+To understand strength of each component, we find the propotion of variance explained(PVE) by each one.
+
+No answer to find number of principal components(no cross validation available)-----scree plot can be used as a guide--we look for an "elbow" i.e. sharp curve.
+
+CLUSTERING-
+K-means clutering(prespecified number of clusters),Hierarchical clustering
+
+KMEANS-within cluster variance is minimum.
+Typically uses euclidean distance.
+For each of k clusters, assign random cluster centre, assign each observation to cluster whose centroid is closest.Modify cluster centres,until cluster/cluster centres do not change.
+Not guaranteed to give global minimum, because starting centres are random.
+K is tuning parameter.
+
+Hierarchical clustering does not require K.Bottom up/agglomerative clustering is most common.
+Joins closest pair of objects and join them.Ends when all points in a single cluster.
+By cutting tree at appropriate height , we choose different number of clusters.
+
+Types of Linkage-
+Complete,Single,Average,Centroid(Slide 43/50)
+Complete-Farthest distance(worst case),Complete,Average -most balanced and commonly used.
+Single -Closest distance(best case)
+Centroid-Distance b/w distance off centroids of clusters-common in genomics
+
+Correlation based distance-computed between features.More correlation=> similar.
+
+Other unsupervised-self organising maps, independent component analysis and spectral clustering.
